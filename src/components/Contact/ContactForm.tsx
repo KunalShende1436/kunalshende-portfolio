@@ -34,6 +34,8 @@ const ContactForm = () => {
       return
     }
 
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '4a9de8ff-372c-4d55-9bce-fdf01a2cb440'
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -42,15 +44,16 @@ const ContactForm = () => {
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          access_key: '4a9de8ff-372c-4d55-9bce-fdf01a2cb440',
-          subject: data.subject || 'New Contact Form Submission',
+          access_key: accessKey,
+          from_name: 'Portfolio Contact Form',
+          subject: `${data.subject || 'New Message'} - from ${data.name} (${email})`,
           botcheck: data.botcheck, // Honeypot
           ...data,
         }),
       })
       const result = await response.json()
       if (result.success) {
-        setStatus({ success: true, message: 'Message sent successfully!' })
+        setStatus({ success: true, message: 'Message sent successfully! Kunal will get back to you soon.' })
         localStorage.setItem('lastSent', Date.now().toString())
       } else {
         setStatus({ success: false, message: result.message || 'Something went wrong.' })
