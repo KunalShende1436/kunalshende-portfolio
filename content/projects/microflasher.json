@@ -1,0 +1,29 @@
+{
+  "priority": 3,
+  "title": "MicroFlasher - Protected Binary Web Serial Flashing Platform",
+  "shortDescription": "A zero-install, browser-based hardware flashing utility utilizing the Web Serial API for secure firmware uploads and binary protections across microcontrollers without requiring native toolchain configurations.",
+  "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+  "livePreview": "",
+  "type": "Web Tooling & IoT",
+  "siteAge": "2026",
+  "slug": "microflasher",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "<strong>MicroFlasher</strong> eliminates the friction of flashing microcontroller firmware by leveraging modern Chromium <strong>Web Serial API</strong> capabilities directly in the browser. Users can connect ESP32, ESP8266, and Arduino targets, upload compiled binaries, inspect serial bootloader logs, and configure Wi-Fi credentials with zero CLI installations or python package dependencies."
+    },
+    {
+      "title": "Web Serial Protocol & Binary Packet Pipeline",
+      "content": "MicroFlasher implements the low-level SLIP (Serial Line Internet Protocol) and ESP bootloader synchronization state machines directly in TypeScript:<br/><br/>• <strong>Baud Rate Auto-Negotiation:</strong> Automatically establishes initial sync at 115200 baud, then negotiates high-speed transfers up to 921600 baud for ultra-fast flashing.<br/>• <strong>Flash Partition Validation:</strong> Validates partition offsets (Bootloader, Partition Table, Application binary) before initiation to prevent memory corruption.<br/>• <strong>Protected Binary Delivery:</strong> Decrypts authenticated client firmware chunks in-memory using Web Crypto API to protect proprietary IP before burning to flash."
+    },
+    {
+      "title": "Web Serial Driver Implementation",
+      "code": "async function connectAndFlashESP(binaryData: Uint8Array, offset: number) {\n  const port = await navigator.serial.requestPort();\n  await port.open({ baudRate: 115200 });\n  \n  const writer = port.writable.getWriter();\n  const reader = port.readable.getReader();\n  \n  console.log('[+] Synchronizing with ESP32 Bootloader...');\n  await sendSyncSequence(writer, reader);\n  \n  console.log('[+] Writing ' + binaryData.length + ' bytes at offset 0x' + offset.toString(16));\n  await streamFlasherBlocks(writer, reader, binaryData, offset, (percent) => {\n    updateProgressBar(percent);\n  });\n}",
+      "filename": "WebSerialFlasher.ts",
+      "language": "typescript"
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View MicroFlasher on GitHub</a></div>"
+    }
+  ]
+}

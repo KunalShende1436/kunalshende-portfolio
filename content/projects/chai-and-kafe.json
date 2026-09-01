@@ -1,0 +1,23 @@
+{
+  "priority": 6,
+  "title": "Chai & Kafe - Artisan Indian Bistro",
+  "shortDescription": "A responsive, modern web platform designed for a dining establishment focusing on performance, high-contrast visual design, fluid menu interactions, and reservation workflows.",
+  "cover": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
+  "livePreview": "",
+  "type": "Frontend Web Application",
+  "siteAge": "2025",
+  "slug": "chai-and-kafe",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "<strong>Chai & Kafe</strong> is an interactive web experience created for a modern dining establishment. It emphasizes visual storytelling, swift page load times, responsive mobile-first navigation, and accessible menu browsing."
+    },
+    {
+      "title": "Features & Architecture",
+      "content": "• <strong>Dynamic Menu Filtering:</strong> Interactive dish filtering by category, dietary preferences, and chef specials.<br/>• <strong>Reservation Engine:</strong> Seamless date-time picker and automated party-size inquiry submission form.<br/>• <strong>High Performance:</strong> Zero bloat, responsive CSS layout grids, smooth scrolling animations, and optimized asset delivery."
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View Chai & Kafe on GitHub</a></div>"
+    }
+  ]
+}

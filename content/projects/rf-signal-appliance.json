@@ -1,0 +1,46 @@
+{
+  "priority": 4,
+  "title": "Dual-Band RF Denial & Signal Isolation Appliance (2.4 GHz & Bluetooth)",
+  "shortDescription": "An experimental hardware platform designed for wireless security testing, perimeter isolation, and RF resilience auditing across 2.4 GHz Wi-Fi and Bluetooth spectrums.",
+  "cover": "/images/projects/rf-jammer/rf-jammer-1.jpg",
+  "livePreview": "",
+  "githubLink": "https://github.com/KunalShende1436",
+  "type": "RF Hardware & Security",
+  "siteAge": "2026",
+  "slug": "rf-signal-appliance",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "The <strong>Dual-Band RF Denial & Signal Isolation Appliance</strong> is an experimental hardware system built for wireless security resilience research, perimeter containment, and physical RF vulnerability testing. Built around high-gain dual-transceiver frontends, the system evaluates how IoT sensor nodes, wireless communication stacks, and perimeter defenses failover, recover, or detect localized signal suppression and high-noise interference."
+    },
+    {
+      "image": "/images/projects/rf-jammer/rf-jammer-1.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 1: Dual-band RF signal isolation appliance frontend with dual omnidirectional high-gain antennas and power rail indicators.</p>"
+    },
+    {
+      "title": "Defensive Applications & Wireless Auditing",
+      "content": "The appliance is engineered specifically to benchmark defensive wireless resilience:<br/><br/>• <strong>RF Failover & Redundancy Auditing:</strong> Stress-tests IoT mesh networks and critical wireless endpoints to verify automated fallback to secondary channels or wired links during total link loss.<br/>• <strong>Secure Perimeter Signal Isolation:</strong> Provides localized, low-range wireless signal containment to prevent unauthorized eavesdropping or rogue data leakage within physically sensitive test facilities.<br/>• <strong>Wireless DoS Resilience Testing:</strong> Simulates high-noise jamming environments to benchmark the detection capabilities of Wireless Intrusion Detection Systems (WIDS)."
+    },
+    {
+      "image": "/images/projects/rf-jammer/rf-jammer-2.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 2: Internal RF frequency synthesizer module and power amplification stage mounted with heat dissipation shielding.</p>"
+    },
+    {
+      "title": "Hardware Frontend & Signal Synthesis Control",
+      "content": "The architecture incorporates dual omnidirectional high-gain antennas paired with RF amplifier stages, filtered power distribution rails, and microcontroller-based frequency hopping sweep synthesis to deliver targeted, stable RF evaluations across testing bands."
+    },
+    {
+      "image": "/images/projects/rf-jammer/rf-jammer-3.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 3: Close-up of the RF transceiver PCB interface and carrier frequency modulation wiring.</p>"
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View Project on GitHub</a></div>"
+    }
+  ]
+}

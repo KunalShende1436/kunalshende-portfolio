@@ -1,0 +1,31 @@
+{
+  "title": "Building ZeroTrace: An ESP32-S3 Hardware Companion for RF Auditing & USB-HID Security",
+  "shortDescription": "A technical overview of designing an all-in-one embedded penetration testing and RF telemetry device with FreeRTOS, ST7735 graphics, and USB OTG automation.",
+  "slug": "zerotrace-embedded-companion",
+  "date": "2026-04-15",
+  "coverImage": "/images/projects/zerotrace/zerotrace-1.jpg",
+  "keywords": ["ESP32-S3", "Embedded Security", "RF Spectrum", "FreeRTOS", "USB-HID", "Hardware Audit"],
+  "detailSections": [
+    {
+      "title": "Why Build ZeroTrace?",
+      "content": "Modern cybersecurity audits often require a mix of wireless spectrum monitoring tools, USB endpoint testing devices, and RF telemetry trackers. <strong>ZeroTrace</strong> was created to unify these capabilities into a single, pocket-sized, self-contained embedded companion powered by the <strong>ESP32-S3</strong> dual-core microcontroller."
+    },
+    {
+      "image": "/images/projects/zerotrace/zerotrace-2.jpg"
+    },
+    {
+      "title": "Key Engineering Highlights",
+      "content": "• <strong>2.4 GHz RF & Wi-Fi Auditing:</strong> Non-blocking background promiscuous packet scanning, channel noise assessment, and live RSSI foxhunting with visual feedback.<br/><br/>• <strong>Deterministic USB-HID Payloads:</strong> Native hardware USB OTG stack enabling keystroke automation routines for vulnerability assessments without auxiliary USB dongles.<br/><br/>• <strong>Responsive Firmware Architecture:</strong> Written in modular C++ leveraging FreeRTOS multi-threading to guarantee that 60 FPS display rendering on the ST7735 TFT screen never drops a packet."
+    },
+    {
+      "title": "Firmware Task Architecture",
+      "code": "// ZeroTrace FreeRTOS Dual-Core Architecture\nvoid app_main() {\n    // Core 0: Wireless Promiscuous Sniffing & RF Spectrum Calculations\n    xTaskCreatePinnedToCore(vTaskRFEngine, \"RF_Task\", 8192, NULL, 3, NULL, 0);\n\n    // Core 1: Low-Latency ST7735 UI Rendering & ADC Joystick Handling\n    xTaskCreatePinnedToCore(vTaskDisplayUI, \"UI_Task\", 4096, NULL, 2, NULL, 1);\n}",
+      "filename": "main_dispatcher.cpp",
+      "language": "cpp"
+    },
+    {
+      "title": "Open Source & Future Work",
+      "content": "ZeroTrace is currently being evaluated for advanced signal resilience tests and design patent filing. You can inspect the firmware, circuit designs, and hardware build documentation on the official GitHub repository.<br/><br/><div class=\"mt-6 flex justify-center\"><a href=\"https://github.com/KunalShende1436/ZeroTrace---CyberSecurity-Audit-Multipurpose-Device\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent rounded-lg px-6 py-2.5 text-sm font-medium hover:scale-105 transition-all\">⭐ Star ZeroTrace on GitHub</a></div>"
+    }
+  ]
+}

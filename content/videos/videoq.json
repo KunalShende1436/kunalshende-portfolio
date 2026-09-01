@@ -1,0 +1,16 @@
+[
+  {
+    "id": "zerotrace-demo-1",
+    "title": "ZeroTrace - Live Hardware Firmware Demo",
+    "description": "Real-time 2.4 GHz RF spectrum scanning, Wi-Fi auditing, RSSI directional hunting, and menu navigation on the ST7735 color TFT screen.",
+    "videoUrl": "/images/projects/zerotrace/zerotrace-demo.mp4",
+    "poster": "/images/projects/zerotrace/zerotrace-1.jpg"
+  },
+  {
+    "id": "zerotrace-3d-video",
+    "title": "ZeroTrace - 3D Enclosure & Hardware Showcase",
+    "description": "3D render and mechanical architecture walkthrough demonstrating the ESP32-S3 microcontroller, display mount, and 5-way joystick navigation array.",
+    "videoUrl": "/images/projects/zerotrace/zerotrace-3D-video-1.mp4",
+    "poster": "/images/projects/zerotrace/zerotrace-2.jpg"
+  }
+]

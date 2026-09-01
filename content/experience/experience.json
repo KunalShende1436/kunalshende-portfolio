@@ -1,0 +1,85 @@
+[
+  {
+    "id": "exp-001",
+    "role": "Web Exploit Hunting & Bug Bounty Intern",
+    "company": "EduSkills & AICTE",
+    "period": "Jun 2026 - Aug 2026",
+    "description": [
+      "Conducted web application penetration testing, vulnerability assessment, and OWASP Top 10 attack analysis.",
+      "Identified and documented security misconfigurations, injection vulnerabilities, and broken access controls."
+    ],
+    "technologies": [
+      "VAPT",
+      "Web Security",
+      "Burp Suite",
+      "OWASP Top 10",
+      "Bug Bounty"
+    ]
+  },
+  {
+    "id": "exp-002",
+    "role": "Cybersecurity & SecOps Intern",
+    "company": "Palo Alto Networks / EduSkills",
+    "period": "Jan 2026 - Mar 2026",
+    "description": [
+      "Mastered Security Operations (SecOps), Network Security fundamentals, Cloud Security architecture, and threat mitigation.",
+      "Analyzed packet captures, firewall rules, and endpoint protection policies across multi-cloud environments."
+    ],
+    "technologies": [
+      "Network Security",
+      "Cloud Security",
+      "SecOps",
+      "Threat Mitigation",
+      "Palo Alto Strata"
+    ]
+  },
+  {
+    "id": "exp-003",
+    "role": "Java Full Stack Developer Intern",
+    "company": "EduSkills & AICTE",
+    "period": "Oct 2025 - Dec 2025",
+    "description": [
+      "Engineered full-stack web applications connecting relational databases with robust Java backend services.",
+      "Developed RESTful APIs, authentication workflows, and modular UI components."
+    ],
+    "technologies": [
+      "Java",
+      "Spring Boot",
+      "REST APIs",
+      "SQL",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": "exp-004",
+    "role": "Cloud Architect Intern",
+    "company": "AWS Academy",
+    "period": "Apr 2025 - Jun 2025",
+    "description": [
+      "Configured cloud infrastructure including EC2 instances, S3 storage buckets, VPC networking, and IAM security policies.",
+      "Deployed scalable cloud-native architectures with automated provisioning."
+    ],
+    "technologies": [
+      "AWS",
+      "EC2 / S3",
+      "VPC / IAM",
+      "Cloud Architecture"
+    ]
+  },
+  {
+    "id": "exp-005",
+    "role": "Android Developer Intern",
+    "company": "Google for Developers",
+    "period": "Jan 2025 - Mar 2025",
+    "description": [
+      "Built native mobile applications with modern UI principles, asynchronous tasks, and background sensor services.",
+      "Integrated RESTful client communication and SQLite local caching."
+    ],
+    "technologies": [
+      "Android SDK",
+      "Kotlin / Java",
+      "Mobile Architecture",
+      "Material Design"
+    ]
+  }
+]

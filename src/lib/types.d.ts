@@ -1,0 +1,107 @@
+export interface Project {
+  title: string
+  shortDescription: string
+  priority: number
+  cover: string
+  livePreview?: string
+  githubLink?: string
+  visitors?: string
+  earned?: string
+  githubStars?: string
+  ratings?: string
+  numberOfSales?: string
+  type: string
+  siteAge?: string
+  slug?: string
+  detailSections?: {
+    title?: string
+    content?: string
+    image?: string
+    code?: string
+    language?: string
+    filename?: string
+  }[]
+}
+
+export interface Blog {
+  title: string
+  shortDescription: string
+  date: string
+  coverImage: string
+  slug: string
+  keywords?: string[]
+  detailSections?: {
+    title?: string
+    content?: string
+    image?: string
+    code?: string
+    language?: string
+    filename?: string
+    interactive?: string
+  }[]
+}
+
+export interface Heading {
+  id: string
+  title: string
+  items: Heading[]
+}
+
+export interface Video {
+  id: string
+  title: string
+  description: string
+  videoUrl: string
+}
+
+export interface Achievement {
+  id: string
+  title: string
+  issuer: string
+  date: string
+  image: string
+}
+
+export interface Testimonial {
+  name: string
+  title?: string
+  feedback: string
+  image: string
+  stars: number
+  createdAt: string
+}
+
+export interface ExperienceItem {
+  id: string
+  role: string
+  company: string
+  period: string
+  description: string[]
+  technologies: string[]
+}
+
+export interface EducationItem {
+  id: string
+  degree: string
+  institution: string
+  period: string
+  grade: string
+  details?: string
+  certificateUrl?: string
+  transcriptUrl?: string
+}
+
+export interface PublicationItem {
+  id: string
+  title: string
+  authors: string
+  journal: string
+  year: string
+  abstract: string
+  bibtex: string
+  htmlUrl?: string
+  pdfUrl?: string
+  citations?: number
+  image: string
+}
+

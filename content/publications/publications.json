@@ -1,0 +1,15 @@
+[
+  {
+    "id": "patent-001",
+    "title": "Design Patent: ZeroTrace — CyberSecurity Audit & Multipurpose Device Enclosure",
+    "authors": "Kunal M Shende",
+    "journal": "Intellectual Property India (Patent Office)",
+    "year": "April 2026",
+    "abstract": "Official Design Patent Application (Application No: 499678-001, CBR NO: 209757) filed in April 2026. Protects the unique industrial design, integrated ST7735 full-color display bezel, 5-way joystick navigation layout, high-gain 2.4 GHz RF transceiver mounts, and ergonomic pocket-sized form factor for the ZeroTrace cybersecurity auditing companion.",
+    "bibtex": "@patent{shende2026zerotracepatent,\n  title={Design Patent: ZeroTrace — CyberSecurity Audit & Multipurpose Device Enclosure},\n  author={Shende, Kunal M},\n  year={April 2026},\n  note={Application No: 499678-001, CBR NO: 209757}\n}",
+    "htmlUrl": "https://github.com/KunalShende1436/ZeroTrace---CyberSecurity-Audit-Multipurpose-Device",
+    "pdfUrl": "https://github.com/KunalShende1436/ZeroTrace---CyberSecurity-Audit-Multipurpose-Device",
+    "citations": 1,
+    "image": "/images/projects/zerotrace/zerotrace-1.jpg"
+  }
+]

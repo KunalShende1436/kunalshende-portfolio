@@ -1,0 +1,33 @@
+{
+  "priority": 2,
+  "title": "Sentinel - HID Attack Detection Framework",
+  "shortDescription": "A specialized hardware-security framework designed to detect, monitor, and mitigate unauthorized Human Interface Device (HID) keystroke injection attacks by evaluating rapid micro-timings and aberrant input patterns in real time.",
+  "cover": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+  "livePreview": "",
+  "type": "Cybersecurity Framework",
+  "siteAge": "2026",
+  "slug": "sentinel",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "<strong>Sentinel</strong> is a defensive security framework developed to counter automated keystroke injection hardware (such as BadUSB, USB Rubber Ducky, and malicious microcontroller firmware). While traditional endpoint protection tools inspect process binaries and filesystem activity, Sentinel analyzes input subsystem telemetry at the hardware-driver layer."
+    },
+    {
+      "title": "Micro-Timing Anomaly Detection Engine",
+      "content": "Human typing exhibits natural biometric entropy—dynamic inter-key latencies, flight times, and digram variance. Malicious automated HID devices inject keystrokes at superhuman rates (sub-5 millisecond static intervals) with near-zero jitter.<br/><br/>Sentinel continuously measures inter-keystroke intervals (IKIs) using high-precision hardware timestamps, computing rolling standard deviations and Shannon entropy metrics across input streams."
+    },
+    {
+      "title": "Automated Mitigation & Alert Daemon",
+      "content": "Upon detecting an injection threshold breach, Sentinel triggers instantaneous defensive countermeasures:<br/><br/>• <strong>Dynamic USB Port Lockout:</strong> Suspends or resets the offending USB hub port via OS subsystem hooks.<br/>• <strong>Terminal Focus Severance:</strong> Minimizes active privileged terminals (PowerShell, Command Prompt, bash) to prevent code execution.<br/>• <strong>Forensic Snapshotting:</strong> Captures the full payload buffer, timestamp delta, and hardware vendor/product IDs for incident response."
+    },
+    {
+      "title": "Timing Anomaly Detection Algorithm",
+      "code": "import time\nfrom collections import deque\nimport numpy as np\n\nclass SentinelDetector:\n    def __init__(self, threshold_ms=12.0, entropy_cutoff=1.8):\n        self.key_timestamps = deque(maxlen=30)\n        self.threshold_ms = threshold_ms\n        self.entropy_cutoff = entropy_cutoff\n\n    def process_key_event(self, key_code):\n        now = time.perf_counter() * 1000.0  # ms\n        self.key_timestamps.append(now)\n        \n        if len(self.key_timestamps) >= 15:\n            deltas = np.diff(list(self.key_timestamps))\n            mean_interval = np.mean(deltas)\n            std_dev = np.std(deltas)\n            \n            # Detect superhuman burst or zero-jitter injection\n            if mean_interval < self.threshold_ms and std_dev < 2.0:\n                self.trigger_mitigation(deltas, mean_interval)\n                \n    def trigger_mitigation(self, deltas, mean_speed):\n        print(f\"[!] HID INJECTION DETECTED: {mean_speed:.2f}ms/key avg. Isolating input!\")",
+      "filename": "sentinel_detector.py",
+      "language": "python"
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View Sentinel on GitHub</a></div>"
+    }
+  ]
+}

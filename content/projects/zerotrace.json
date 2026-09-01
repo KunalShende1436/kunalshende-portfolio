@@ -1,0 +1,66 @@
+{
+  "priority": 1,
+  "title": "ZeroTrace - CyberSecurity Audit & Multipurpose Device",
+  "shortDescription": "An all-in-one embedded hardware companion built on the ESP32-S3 microcontroller, featuring an ST7735 color display, analog joystick navigation, and a multi-mode firmware ecosystem supporting 2.4 GHz RF scanning, Wi-Fi auditing, RSSI Foxhunting, and native USB HID automation.",
+  "cover": "/images/projects/zerotrace/zerotrace-1.jpg",
+  "livePreview": "",
+  "githubLink": "https://github.com/KunalShende1436/ZeroTrace---CyberSecurity-Audit-Multipurpose-Device",
+  "type": "Hardware Security",
+  "siteAge": "2026",
+  "slug": "zerotrace",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "<strong>ZeroTrace</strong> is an advanced, standalone embedded hardware companion engineered from the ground up on the <strong>ESP32-S3</strong> dual-core microcontroller. Equipped with an onboard <strong>ST7735 128x160 full-color TFT display</strong>, an ergonomic analog 5-way joystick navigation array, and a high-efficiency power management circuit, ZeroTrace provides cybersecurity researchers and IoT auditors with an agile, pocket-sized auditing toolkit."
+    },
+    {
+      "image": "/images/projects/zerotrace/zerotrace-1.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 1: Front display view showcasing the ST7735 128x160 color TFT screen, 5-way analog joystick, and ESP32-S3 microcontroller board.</p>"
+    },
+    {
+      "title": "Video 1: Hardware Live Demonstration",
+      "content": "<div class=\"w-full max-w-[800px] mx-auto my-6 overflow-hidden rounded-xl border border-[#FFFFFF1A] shadow-lg bg-black\"><video src=\"/images/projects/zerotrace/zerotrace-demo.mp4\" controls playsinline class=\"w-full h-auto rounded-lg\"></video><p class=\"text-xs text-center text-neutral/70 mt-2 italic\">Demo Video 1: Refined live demonstration showcasing real-time RF spectrum analysis & UI menu navigation</p></div>"
+    },
+    {
+      "title": "Core Hardware Architecture & Multi-Mode Firmware",
+      "content": "ZeroTrace runs a custom, multi-threaded <strong>FreeRTOS</strong> C++ firmware architecture featuring deterministic state switching between specialized security modules:<br/><br/>• <strong>2.4 GHz RF Spectrum Scanner:</strong> Analyzes raw 802.11 channel noise, packet traffic density, and carrier interference in real time.<br/>• <strong>Wi-Fi Network Auditor & RSSI Foxhunter:</strong> Maps beacon frames, probes AP signal attenuation, and tracks physical emitter proximity through dynamic RSSI logarithmic audio-visual bars.<br/>• <strong>Native USB-HID Automation Engine:</strong> Leverages ESP32-S3's hardware USB OTG controller to deliver deterministic keystroke injection payloads for automated vulnerability assessment.<br/>• <strong>Wireless MJPEG Screen Mirroring:</strong> Live-streams real-time telemetry and framebuffers over an ad-hoc Wi-Fi access point via WebSockets."
+    },
+    {
+      "image": "/images/projects/zerotrace/zerotrace-2.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 2: Active firmware lock & telemetry screen showing ST7735 graphical UI rendering and status indicators.</p>"
+    },
+    {
+      "title": "Video 2: 3D Mechanical Enclosure & Component Layout",
+      "content": "<div class=\"w-full max-w-[800px] mx-auto my-6 overflow-hidden rounded-xl border border-[#FFFFFF1A] shadow-lg bg-black\"><video src=\"/images/projects/zerotrace/zerotrace-3D-video-1.mp4\" controls muted playsinline class=\"w-full h-auto rounded-lg\"></video><p class=\"text-xs text-center text-neutral/70 mt-2 italic\">Demo Video 2: 3D enclosure and physical component integration render</p></div>"
+    },
+    {
+      "title": "Hardware Prototyping & Driver Integration",
+      "content": "Every subsystem was rigorously prototyped on custom perfboard layouts with dedicated high-speed SPI busses for the ST7735 display, ADC filtering for the analog thumbstick inputs, and ESD-protected USB power rails. The firmware integrates low-level register manipulation for non-blocking UI rendering at 60 FPS."
+    },
+    {
+      "image": "/images/projects/zerotrace/zerotrace-3.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 3: Wi-Fi beacon scanning and RSSI packet inspection screen displaying real-time access point metadata.</p>"
+    },
+    {
+      "title": "Firmware State Machine & Telemetry Engine",
+      "code": "// ZeroTrace FreeRTOS Main Task & Mode Dispatcher\nvoid app_main() {\n    initHardwareBus(); // Initialize SPI, I2C, ADC & ST7735\n    initUSBHIDStack(); // Initialize USB OTG peripheral in HID mode\n    \n    xTaskCreatePinnedToCore(\n        taskDisplayTelemetry,\n        \"DisplayTask\",\n        4096,\n        NULL,\n        2,\n        &displayTaskHandle,\n        1\n    );\n    \n    xTaskCreatePinnedToCore(\n        taskRFScannerAuditor,\n        \"RFScanTask\",\n        8192,\n        NULL,\n        3,\n        &rfTaskHandle,\n        0\n    );\n}",
+      "filename": "ZeroTrace_Main.cpp",
+      "language": "cpp"
+    },
+    {
+      "image": "/images/projects/zerotrace/zerotrace-4.jpg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 4: Close-up view of the analog 5-way joystick navigation array and solder-bridge bus wiring.</p>"
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436/ZeroTrace---CyberSecurity-Audit-Multipurpose-Device\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View ZeroTrace on GitHub</a></div>"
+    }
+  ]
+}

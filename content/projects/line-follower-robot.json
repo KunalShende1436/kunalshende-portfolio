@@ -1,0 +1,52 @@
+{
+  "priority": 5,
+  "title": "Autonomous Line-Follower Robot",
+  "shortDescription": "A responsive, two-wheel differential drive robotics platform engineered around the ATmega328P architecture with hardware-level PWM frequency calibration (TCCR0B 7.8 kHz) for high-precision path tracking.",
+  "cover": "/images/projects/linefollower/Linefollower-img1.jpeg",
+  "livePreview": "",
+  "githubLink": "https://github.com/KunalShende1436/Autonomous-Line-Follower-Robot",
+  "type": "Robotics & Hardware",
+  "siteAge": "2025",
+  "slug": "line-follower-robot",
+  "detailSections": [
+    {
+      "title": "Overview",
+      "content": "Engineered and constructed in 2025, this autonomous robotics platform navigates complex tracks using high-speed differential drive kinematics powered by the <strong>ATmega328P</strong> microcontroller and an <strong>L298N dual H-bridge motor driver</strong>."
+    },
+    {
+      "image": "/images/projects/linefollower/Linefollower-img1.jpeg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 1: Front chassis perspective showing the ATmega328P controller, battery pack, and differential drive platform.</p>"
+    },
+    {
+      "title": "Hardware-Level PWM Frequency Calibration (TCCR0B Manipulation)",
+      "content": "Standard Arduino PWM switches at ~490 Hz or 980 Hz, causing audible motor whine and low-duty-cycle stalling under torque load. By directly configuring the <strong>TCCR0B timer/counter control register</strong> to set timer prescalers for ~7.8 kHz / 62.5 kHz operation, the motors deliver smooth, stall-free torque across micro-adjustments."
+    },
+    {
+      "image": "/images/projects/linefollower/Linefollower-img2.jpeg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 2: Top chassis layout detailing the L298N dual H-bridge motor driver, power distribution switch, and motor leads.</p>"
+    },
+    {
+      "title": "Sensor Array & Closed-Loop Control Algorithm",
+      "content": "The front bumper integrates high-sensitivity analog/digital IR optical sensors with threshold hysteresis. A tuned closed-loop proportional controller dynamically adjusts differential wheel velocities to negotiate sharp 90-degree corners, acute intersections, and speed straights."
+    },
+    {
+      "image": "/images/projects/linefollower/Linefollower-img3.jpeg"
+    },
+    {
+      "content": "<p class=\"text-xs text-center text-accent/90 font-mono mt-[-1rem] mb-4\">📷 Fig 3: Optical IR line detection array mounted beneath the front bumper with threshold adjustment potentiometers.</p>"
+    },
+    {
+      "title": "Timer Configuration & Control Code",
+      "code": "// Configure Timer0 for High-Frequency PWM on Pins 5 & 6\nvoid setupHighFreqPWM() {\n  // Set Fast PWM mode and 1/8 prescaler for 7.8 kHz PWM\n  TCCR0A = _BV(COM0A1) | _BV(COM0B1) | _BV(WGM00) | _BV(WGM01);\n  TCCR0B = _BV(CS01); // Prescaler 8\n  \n  pinMode(LEFT_PWM_PIN, OUTPUT);\n  pinMode(RIGHT_PWM_PIN, OUTPUT);\n}\n\nvoid loop() {\n  int leftSense = analogRead(IR_LEFT_PIN);\n  int rightSense = analogRead(IR_RIGHT_PIN);\n  int error = leftSense - rightSense;\n  \n  int leftSpeed = constrain(BASE_SPEED + (error * KP), 0, 255);\n  int rightSpeed = constrain(BASE_SPEED - (error * KP), 0, 255);\n  \n  analogWrite(LEFT_PWM_PIN, leftSpeed);\n  analogWrite(RIGHT_PWM_PIN, rightSpeed);\n}",
+      "filename": "LineFollower_TCCR0B.ino",
+      "language": "cpp"
+    },
+    {
+      "content": "<div class=\"mt-12 flex justify-center\"><a href=\"https://github.com/KunalShende1436/Autonomous-Line-Follower-Robot\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-neutral bg-secondary border border-accent cursor-pointer rounded-lg px-6 py-[10px] text-center text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg\">🚀 View Repository on GitHub</a></div>"
+    }
+  ]
+}

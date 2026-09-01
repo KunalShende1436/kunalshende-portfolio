@@ -1,0 +1,121 @@
+[
+  {
+    "id": "award-techtantra-2k26",
+    "title": "🥈 2nd Prize Winner - National Level Project Competition TECHTANTRA 2K26",
+    "issuer": "TECHTANTRA 2K26 (National Level Technical Event)",
+    "date": "March 2026",
+    "category": "Award",
+    "isFeatured": true,
+    "description": "Awarded 2nd Prize for ZeroTrace (CyberSecurity Audit & Multipurpose Hardware Companion) in the National Level Technical Project Competition.",
+    "images": [
+      "/images/projects/techtantra/TECHTANTRA_2K26-img1.jpg",
+      "/images/projects/techtantra/TECHTANTRA_2K26-img2.jpg",
+      "/images/projects/techtantra/TECHTANTRA_2K26-img3.jpg"
+    ],
+    "image": "/images/projects/techtantra/TECHTANTRA_2K26-img1.jpg"
+  },
+  {
+    "id": "cert-craw-iit",
+    "title": "Cyber Security Workshop & Credential",
+    "issuer": "Craw Security in collaboration with IIT Bombay",
+    "date": "2025 - 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/CrawSecurity_IITBombay.jpg"
+  },
+  {
+    "id": "cert-hackerrank-python",
+    "title": "Python (Basic & Problem Solving) Certified",
+    "issuer": "HackerRank",
+    "date": "2025",
+    "category": "Programming",
+    "image": "/images/certificates/Hackerrank_python.jpg"
+  },
+  {
+    "id": "cert-german-01",
+    "title": "German Language Level - 1 Credential",
+    "issuer": "Foreign Language Examination Board",
+    "date": "December 2025",
+    "category": "Language",
+    "image": "/images/certificates/GermanLevel01.jpg"
+  },
+  {
+    "id": "cert-webexploit",
+    "title": "Web Exploit Hunting And Bug Bounty Virtual Internship",
+    "issuer": "AICTE & EduSkills",
+    "date": "Jun 2026 - Aug 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-internship-webexploit.jpg"
+  },
+  {
+    "id": "cert-secops",
+    "title": "Security Operations (SecOps) Fundamentals",
+    "issuer": "Palo Alto Networks",
+    "date": "March 22, 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-secops.jpg"
+  },
+  {
+    "id": "cert-network-sec",
+    "title": "Network Security Fundamentals",
+    "issuer": "Palo Alto Networks",
+    "date": "March 22, 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-network-security.jpg"
+  },
+  {
+    "id": "cert-cyber-fund",
+    "title": "Cybersecurity Fundamentals",
+    "issuer": "Palo Alto Networks",
+    "date": "March 22, 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-cybersecurity-fund.jpg"
+  },
+  {
+    "id": "cert-cloud-sec",
+    "title": "Cloud Security Fundamentals",
+    "issuer": "Palo Alto Networks",
+    "date": "March 22, 2026",
+    "category": "Cloud",
+    "image": "/images/certificates/cert-cloud-security.jpg"
+  },
+  {
+    "id": "cert-cyber-intern",
+    "title": "Cybersecurity Virtual Internship",
+    "issuer": "EduSkills & AICTE",
+    "date": "Jan 2026 - Mar 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-internship-cyber.jpg"
+  },
+  {
+    "id": "cert-nasscom-eth",
+    "title": "Ethical Hacking Credential",
+    "issuer": "NASSCOM FutureSkills Prime",
+    "date": "2025 - 2026",
+    "category": "Cybersecurity",
+    "image": "/images/certificates/cert-nasscom-ethical-hacking.jpg"
+  },
+  {
+    "id": "cert-java-intern",
+    "title": "Java Full Stack Developer Virtual Internship",
+    "issuer": "EduSkills & AICTE",
+    "date": "Oct 2025 - Dec 2025",
+    "category": "Development",
+    "image": "/images/certificates/cert-internship-java.jpg"
+  },
+  {
+    "id": "cert-cloud-aws",
+    "title": "Cloud Virtual Internship",
+    "issuer": "AWS Academy",
+    "date": "Apr 2025 - Jun 2025",
+    "category": "Cloud",
+    "image": "/images/certificates/cert-internship-cloud.jpg"
+  },
+  {
+    "id": "cert-android-google",
+    "title": "Android Developer Virtual Internship",
+    "issuer": "Google for Developers",
+    "date": "Jan 2025 - Mar 2025",
+    "category": "Development",
+    "image": "/images/certificates/cert-internship-android.jpg"
+  }
+]

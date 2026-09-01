@@ -1,0 +1,479 @@
+@import 'tailwindcss';
+
+[data-theme='light'] {
+  --p: #fff;
+  --pc: #0d1a3b;
+  --s: #edeaf4;
+  --sc: #0d1a3b;
+  --tc: #6b7c93;
+  --a: #5565e8;
+  --n: #0d1a3b;
+
+  --b: #dfdcdc;
+  --marquee: #dbe3f7;
+
+  /* for logo */
+  --gradient-start: #5565e8;
+  --gradient-mid: #18f2e5;
+  --gradient-end: #dbe3f7;
+}
+
+[data-theme='dark'] {
+  --p: #011627;
+  --pc: #607b96;
+  --s: #011221;
+  --sc: #5565e8;
+  --tc: #99a1af;
+  --a: #18f2e5;
+  --n: #fff;
+
+  --b: #1e2d3d;
+  --marquee: #062b48;
+
+  /* for logo */
+  --gradient-start: #18f2e5;
+  --gradient-mid: #5cc0fe;
+  --gradient-end: #4ea7ff;
+}
+
+[data-theme='aqua'] {
+  --p: #345da7;
+  --pc: #d4deef;
+
+  --s: #130b43;
+  --sc: #5565e8;
+  --tc: #d4deef;
+  --a: #38ccb2;
+  --n: #fff;
+  --b: #1e2d3d;
+  --marquee: #062b48;
+
+  /* for logo */
+  --gradient-start: #00c1d4;
+  --gradient-mid: #18f2e5;
+  --gradient-end: #ff6f61;
+}
+
+[data-theme='retro'] {
+  --p: #fff3e0;
+  --pc: #6d4c41;
+  --s: #e4d8b4;
+  --sc: #5d4037;
+  --tc: #8c6b5e;
+  --a: #f35248;
+  --n: #6d4c41;
+
+  --b: #ffe0b2;
+  --marquee: #ffcc80;
+
+  /* for logo */
+  --gradient-start: #ffab40;
+  --gradient-mid: #f8d5a0;
+  --gradient-end: #6d4c41;
+}
+
+@theme {
+  --color-primary: var(--p);
+  --color-primary-content: var(--pc);
+  --color-secondary: var(--s);
+  --color-secondary-content: var(--sc);
+  --color-tertiary-content: var(--tc);
+  --color-accent: var(--a);
+  --color-neutral: var(--n);
+  --color-border: var(--b);
+  --color-marquee: var(--marquee);
+  --color-tag: #ffa800;
+
+  --animate-fade-in: fade-in 0.5s ease-out 1;
+  --animate-blink: blink 0.8s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.3s ease-out 1;
+
+  --background-image-large-glow: url('../assets/images/bg-lg.svg');
+  --background-image-small-glow: url('../assets/images/bg-sm.svg');
+  --background-image-skill-gradient: linear-gradient(to right, var(--p), #062b48, var(--p));
+
+  --background-position-large-glow-position: 110% 30%;
+  --background-position-small-glow-position: 50% 600%;
+
+  --font-fira-code: Fira Code, monospace;
+  --font-inter: Inter, sans-serif;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-up {
+    0% {
+      top: 5px;
+    }
+
+    100% {
+      top: 0px;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scrollbar-width: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  @apply bg-primary text-white;
+}
+
+.rehype-code-title {
+  @apply text-primary-content rounded-t-md bg-[#05101a] px-6 py-3 text-sm font-medium;
+}
+
+h2,
+h3 {
+  scroll-margin-top: 5.25rem;
+}
+
+section {
+  scroll-margin-top: 1.5rem;
+}
+
+/* Safari-only */
+@supports (-webkit-hyphens: none) {
+  * {
+    scroll-margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  h2,
+  h3 {
+    scroll-margin-top: 1.5rem;
+  }
+}
+
+
+.hide-scrollbar {
+  -webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+}
+
+.text-glitch {
+  text-shadow: 2px 2px 0px #00ffff;
+}
+
+/* Fix for Chrome Autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-secondary) inset !important;
+  -webkit-text-fill-color: var(--color-neutral) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ─── 404 Not Found Page ─── */
+.not-found-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  min-height: calc(100dvh - 10rem);
+  overflow: hidden;
+}
+
+.not-found-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(30, 45, 61, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 45, 61, 0.3) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 100%);
+  animation: gridPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes gridPulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.7; }
+}
+
+/* Glow Orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+.glow-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--a);
+  top: 10%;
+  left: -5%;
+  animation: orbFloat1 12s ease-in-out infinite alternate;
+}
+.glow-orb-2 {
+  width: 350px;
+  height: 350px;
+  background: #5565e8;
+  bottom: 10%;
+  right: -5%;
+  animation: orbFloat2 10s ease-in-out infinite alternate;
+}
+.glow-orb-3 {
+  width: 200px;
+  height: 200px;
+  background: #ffa800;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbFloat3 14s ease-in-out infinite alternate;
+  opacity: 0.08;
+}
+
+@keyframes orbFloat1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, 30px); }
+}
+@keyframes orbFloat2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-30px, -40px); }
+}
+@keyframes orbFloat3 {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-30%, -60%) scale(1.3); }
+}
+
+/* Content */
+.not-found-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* SVG */
+.not-found-illustration {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  margin-bottom: 2rem;
+  animation: floatSvg 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(24, 242, 229, 0.08));
+}
+
+@keyframes floatSvg {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Title */
+.not-found-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--n);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .not-found-title { font-size: 2rem; }
+  .not-found-subtitle { font-size: 1rem; }
+  .not-found-code-block { font-size: 0.875rem; }
+}
+
+/* Subtitle */
+.not-found-subtitle {
+  font-size: 0.9rem;
+  color: var(--pc);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* Code Block */
+.not-found-code-block {
+  background: var(--s);
+  border: 1px solid var(--b);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.75rem;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  overflow: hidden;
+}
+.not-found-code-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--a), transparent);
+  animation: scanLine 3s linear infinite;
+}
+@keyframes scanLine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.code-line { margin: 0.2rem 0; }
+.code-line-num { color: #3b5068; margin-right: 1rem; user-select: none; }
+.code-keyword { color: #c792ea; }
+.code-string { color: #addb67; }
+.code-func { color: #82aaff; }
+.code-comment { color: #3b5068; font-style: italic; }
+.code-punct { color: #7fdbca; }
+.code-var { color: var(--a); }
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--a);
+  vertical-align: text-bottom;
+  animation: blink 0.8s ease-in-out infinite;
+}
+
+/* Buttons */
+.not-found-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-404-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background-color: var(--a);
+  color: #011627;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--a);
+}
+.btn-404-primary:hover {
+  background-color: transparent;
+  color: var(--a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(24, 242, 229, 0.2);
+}
+
+.btn-404-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background-color: transparent;
+  color: var(--pc);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--b);
+  transition: all 0.3s ease;
+}
+.btn-404-secondary:hover {
+  border-color: var(--a);
+  color: var(--a);
+  transform: translateY(-2px);
+}
+
+/* Particles */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--a);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: particleFade 4s ease-in-out infinite;
+}
+.particle-1 { top: 20%; left: 15%; animation-delay: 0s; }
+.particle-2 { top: 60%; left: 80%; animation-delay: 1s; }
+.particle-3 { top: 35%; left: 65%; animation-delay: 2s; }
+.particle-4 { top: 75%; left: 25%; animation-delay: 0.5s; }
+.particle-5 { top: 15%; left: 90%; animation-delay: 3s; }
+.particle-6 { top: 85%; left: 55%; animation-delay: 1.5s; }
+.particle-7 { top: 45%; left: 10%; animation-delay: 2.5s; }
+.particle-8 { top: 55%; left: 45%; animation-delay: 3.5s; }
+
+@keyframes particleFade {
+  0%, 100% { opacity: 0; transform: scale(0.5) translateY(0); }
+  50% { opacity: 0.6; transform: scale(1.2) translateY(-20px); }
+}
