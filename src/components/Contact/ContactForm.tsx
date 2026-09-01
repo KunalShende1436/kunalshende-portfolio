@@ -34,7 +34,7 @@ const ContactForm = () => {
       return
     }
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '4a9de8ff-372c-4d55-9bce-fdf01a2cb440'
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '7aa49138-8ae6-47b9-a889-12373010f921'
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
