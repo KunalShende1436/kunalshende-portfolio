@@ -1,59 +1,49 @@
 'use client'
 
 import React, { useState } from 'react'
-import SectionHeading from '../SectionHeading/SectionHeading'
 import Link from 'next/link'
+import SectionHeading from '../SectionHeading/SectionHeading'
 
 interface SkillPill {
   name: string
   category: 'Languages' | 'Frontend' | 'Backend' | 'IoT & Hardware' | 'Databases' | 'DevOps & Tools'
-  color: string // Tailwind text/dot color
-  icon?: string // emoji or short glyph if no SVG
+  color: string
+  icon: string
 }
 
 const allSkills: SkillPill[] = [
   // Languages
-  { name: 'C Programming', category: 'Languages', color: '#3b82f6', icon: '⚡' },
-  { name: 'Embedded C', category: 'Languages', color: '#60a5fa', icon: '📟' },
+  { name: 'C Programming', category: 'Languages', color: '#3b82f6', icon: '💻' },
+  { name: 'Embedded C', category: 'Languages', color: '#60a5fa', icon: '⚡' },
   { name: 'C++', category: 'Languages', color: '#00599C', icon: '⚙️' },
   { name: 'Python', category: 'Languages', color: '#3776AB', icon: '🐍' },
-  { name: 'Flask', category: 'Backend', color: '#000000', icon: '🧪' },
-  { name: 'JavaScript (ES6+)', category: 'Languages', color: '#F7DF1E', icon: '📜' },
-  { name: 'TypeScript', category: 'Languages', color: '#3178C6', icon: '🔷' },
-  { name: 'Bash / Linux Shell', category: 'Languages', color: '#4EAA25', icon: '💻' },
+  { name: 'TypeScript', category: 'Languages', color: '#3178C6', icon: '📘' },
+  { name: 'Bash / Linux Shell', category: 'Languages', color: '#4EAA25', icon: '🐧' },
 
   // IoT & Hardware
-  { name: 'Arduino', category: 'IoT & Hardware', color: '#00979D', icon: '♾️' },
-  { name: 'ESP32 & ESP32-S3', category: 'IoT & Hardware', color: '#E7352C', icon: '📶' },
+  { name: 'ESP32 & ESP32-S3', category: 'IoT & Hardware', color: '#E7352C', icon: '📡' },
+  { name: 'Arduino (ATmega328P)', category: 'IoT & Hardware', color: '#00979D', icon: '🔌' },
   { name: 'Raspberry Pi', category: 'IoT & Hardware', color: '#C51A4A', icon: '🍓' },
+  { name: 'FreeRTOS', category: 'IoT & Hardware', color: '#45B8AC', icon: '⏱️' },
   { name: 'Arduino Cloud', category: 'IoT & Hardware', color: '#008184', icon: '☁️' },
   { name: 'Blynk IoT', category: 'IoT & Hardware', color: '#24C97E', icon: '📲' },
   { name: 'Cisco Packet Tracer', category: 'IoT & Hardware', color: '#1BA0D7', icon: '🌐' },
-  { name: 'FreeRTOS', category: 'IoT & Hardware', color: '#45B8AC', icon: '⏱️' },
-  { name: 'SPI / I2C / UART Buses', category: 'IoT & Hardware', color: '#F59E0B', icon: '🔌' },
+  { name: 'SPI / I2C / UART Buses', category: 'IoT & Hardware', color: '#F59E0B', icon: '🔗' },
 
   // Frontend
-  { name: 'HTML5', category: 'Frontend', color: '#E34F26', icon: '🌐' },
+  { name: 'HTML5', category: 'Frontend', color: '#E34F26', icon: '📄' },
   { name: 'CSS3', category: 'Frontend', color: '#1572B6', icon: '🎨' },
-  { name: 'JavaScript', category: 'Frontend', color: '#F7DF1E', icon: '✨' },
   { name: 'Bootstrap', category: 'Frontend', color: '#7952B3', icon: '🅱️' },
-  { name: 'Tailwind CSS', category: 'Frontend', color: '#06B6D4', icon: '🌊' },
-  { name: 'React.js', category: 'Frontend', color: '#61DAFB', icon: '⚛️' },
-  { name: 'Next.js', category: 'Frontend', color: '#FFFFFF', icon: '▲' },
 
   // Backend
+  { name: 'Python Flask', category: 'Backend', color: '#000000', icon: '🌶️' },
   { name: 'WebSockets', category: 'Backend', color: '#010101', icon: '⚡' },
   { name: 'Firebase', category: 'Backend', color: '#FFCA28', icon: '🔥' },
-  { name: 'Node.js', category: 'Backend', color: '#339933', icon: '🟢' },
-  { name: 'Express.js', category: 'Backend', color: '#AAAAAA', icon: '🚂' },
-  { name: 'RESTful APIs', category: 'Backend', color: '#10B981', icon: '🔗' },
 
   // Databases
-  { name: 'MySQL', category: 'Databases', color: '#4479A1', icon: '🐬' },
+  { name: 'MySQL', category: 'Databases', color: '#4479A1', icon: '🗄️' },
   { name: 'Supabase', category: 'Databases', color: '#3ECF8E', icon: '⚡' },
   { name: 'Firebase Firestore', category: 'Databases', color: '#FFA000', icon: '🔥' },
-  { name: 'PostgreSQL', category: 'Databases', color: '#336791', icon: '🐘' },
-  { name: 'SQLite', category: 'Databases', color: '#003B57', icon: '💾' },
 
   // DevOps & Tools
   { name: 'Git', category: 'DevOps & Tools', color: '#F05032', icon: '🌿' },
@@ -64,7 +54,7 @@ const allSkills: SkillPill[] = [
   { name: 'Google Cloud (GCP)', category: 'DevOps & Tools', color: '#4285F4', icon: '☁️' },
   { name: 'VS Code', category: 'DevOps & Tools', color: '#007ACC', icon: '📝' },
   { name: 'Figma', category: 'DevOps & Tools', color: '#F24E1E', icon: '🎨' },
-  { name: 'Postman', category: 'DevOps & Tools', color: '#FF6C37', icon: '📮' },
+  { name: 'Postman', category: 'DevOps & Tools', color: '#FF6C37', icon: '📬' },
   { name: 'Notion', category: 'DevOps & Tools', color: '#FFFFFF', icon: '📓' },
 ]
 

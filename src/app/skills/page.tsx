@@ -1,14 +1,3 @@
-import {
-  JavaScriptIcon,
-  TypescriptIcon,
-  ReactIcon,
-  NextjsIcon,
-  NodejsIcon,
-  SocketIcon,
-  ArduinoIDEIcon,
-  PythonIcon,
-  TailwindCSS,
-} from '@/utils/icons'
 import SectionHeading from '@/components/SectionHeading/SectionHeading'
 import type { Metadata } from 'next'
 import InteractiveSkillsSection from '@/components/Skills/InteractiveSkillsSection'
@@ -40,7 +29,6 @@ const detailedSkillGroups: SkillGroup[] = [
       { name: 'Embedded C', level: 'Advanced', percentage: 94, category: 'Hardware' },
       { name: 'C++', level: 'Advanced', percentage: 92, category: 'OOP & Systems' },
       { name: 'Python', level: 'Advanced', percentage: 90, category: 'General & Scripting' },
-      { name: 'JavaScript (ES6+)', level: 'Advanced', percentage: 88, category: 'Web' },
       { name: 'TypeScript', level: 'Advanced', percentage: 85, category: 'Typed Web' },
       { name: 'Bash / Linux Shell Scripting', level: 'Intermediate', percentage: 84, category: 'CLI & Automation' },
     ],
@@ -59,13 +47,11 @@ const detailedSkillGroups: SkillGroup[] = [
     ],
   },
   {
-    title: 'Frontend & UI Architecture',
+    title: 'Frontend & UI Standards',
     badge: 'Client Interfaces',
     skills: [
       { name: 'HTML5 & CSS3', level: 'Advanced', percentage: 95, category: 'Web Standards' },
-      { name: 'JavaScript (DOM & Async)', level: 'Advanced', percentage: 90, category: 'Client Logic' },
-      { name: 'Bootstrap & Tailwind CSS', level: 'Advanced', percentage: 92, category: 'Responsive Styling' },
-      { name: 'React.js & Next.js', level: 'Advanced', percentage: 86, category: 'Component Frameworks' },
+      { name: 'Bootstrap Framework', level: 'Advanced', percentage: 90, category: 'Responsive Styling' },
     ],
   },
   {
@@ -73,10 +59,8 @@ const detailedSkillGroups: SkillGroup[] = [
     badge: 'Server & Protocols',
     skills: [
       { name: 'Python Flask', level: 'Advanced', percentage: 90, category: 'Microservices' },
-      { name: 'Node.js & Express.js', level: 'Advanced', percentage: 86, category: 'Async Runtimes' },
       { name: 'WebSockets & Real-Time Streams', level: 'Advanced', percentage: 90, category: 'Low-Latency IO' },
       { name: 'Firebase Backend Services', level: 'Advanced', percentage: 88, category: 'Cloud Functions' },
-      { name: 'RESTful API Architecture', level: 'Advanced', percentage: 92, category: 'API Design' },
     ],
   },
   {
@@ -86,7 +70,6 @@ const detailedSkillGroups: SkillGroup[] = [
       { name: 'MySQL', level: 'Advanced', percentage: 88, category: 'Relational RDBMS' },
       { name: 'Supabase', level: 'Advanced', percentage: 86, category: 'Postgres BaaS' },
       { name: 'Firebase Firestore & Realtime DB', level: 'Advanced', percentage: 88, category: 'NoSQL Cloud' },
-      { name: 'PostgreSQL & SQLite', level: 'Intermediate', percentage: 84, category: 'Embedded & SQL' },
     ],
   },
   {
